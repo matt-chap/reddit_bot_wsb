@@ -8,64 +8,16 @@
 		{
 			"name": "Authorize",
 			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "authUrl",
-							"value": "{{url_authorize}}",
-							"type": "string"
-						},
-						{
-							"key": "redirect_uri",
-							"value": "{{uri_redirect}}",
-							"type": "string"
-						},
-						{
-							"key": "state",
-							"value": "hihuhoyuftgui",
-							"type": "string"
-						},
-						{
-							"key": "scope",
-							"value": "identity",
-							"type": "string"
-						},
-						{
-							"key": "tokenName",
-							"value": "Reddit_Token_WSB",
-							"type": "string"
-						},
-						{
-							"key": "accessTokenUrl",
-							"value": "{{url_accessToken}}",
-							"type": "string"
-						},
-						{
-							"key": "clientSecret",
-							"value": "{{secrete}}",
-							"type": "string"
-						},
-						{
-							"key": "clientId",
-							"value": "{{client_id}}",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url_api}}/me",
+					"raw": "{{url_oauth}}/api/v1/me",
 					"host": [
-						"{{url_api}}"
+						"{{url_oauth}}"
 					],
 					"path": [
+						"api",
+						"v1",
 						"me"
 					],
 					"query": [
