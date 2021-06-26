@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "8b45b165-b165-4fc6-ab72-65a4cf9eec46",
+		"name": "Reddit",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorize",
+			"request": {
+				"auth": {
+					"type": "oauth2",
+					"oauth2": [
+						{
+							"key": "authUrl",
+							"value": "{{url_authorize}}",
+							"type": "string"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "{{uri_redirect}}",
+							"type": "string"
+						},
+						{
+							"key": "state",
+							"value": "hihuhoyuftgui",
+							"type": "string"
+						},
+						{
+							"key": "scope",
+							"value": "identity",
+							"type": "string"
+						},
+						{
+							"key": "tokenName",
+							"value": "Reddit_Token_WSB",
+							"type": "string"
+						},
+						{
+							"key": "accessTokenUrl",
+							"value": "{{url_accessToken}}",
+							"type": "string"
+						},
+						{
+							"key": "clientSecret",
+							"value": "{{secrete}}",
+							"type": "string"
+						},
+						{
+							"key": "clientId",
+							"value": "{{client_id}}",
+							"type": "string"
+						},
+						{
+							"key": "addTokenTo",
+							"value": "header",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url_api}}/me",
+					"host": [
+						"{{url_api}}"
+					],
+					"path": [
+						"me"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "RANDOM_STRING",
+							"disabled": true
+						},
+						{
+							"key": "duration",
+							"value": "DURATION",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "SCOPE_STRING",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "accessTokenUrl",
+				"value": "{{url_accessToken}}",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "authUrl",
+				"value": "{{url_authorize}}",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "hjgitfutftiyui",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "Reddit_WSB_Token",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "identity",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{reddit_wsb_secrete}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{reddit_wsb_client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "{{uri_redirect}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
