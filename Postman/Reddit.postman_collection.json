@@ -6,18 +6,50 @@
 	},
 	"item": [
 		{
-			"name": "Authorize",
+			"name": "Auth Scopes",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url_oauth}}/api/v1/me",
+					"raw": "{{url_oauth_api}}/scopes",
 					"host": [
-						"{{url_oauth}}"
+						"{{url_oauth_api}}"
 					],
 					"path": [
-						"api",
-						"v1",
+						"scopes"
+					],
+					"query": [
+						{
+							"key": "state",
+							"value": "RANDOM_STRING",
+							"disabled": true
+						},
+						{
+							"key": "duration",
+							"value": "DURATION",
+							"disabled": true
+						},
+						{
+							"key": "scope",
+							"value": "SCOPE_STRING",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "About me",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url_oauth_api}}/me",
+					"host": [
+						"{{url_oauth_api}}"
+					],
+					"path": [
 						"me"
 					],
 					"query": [
@@ -40,11 +72,87 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "Me Karma",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url_oauth_api}}/me/karma",
+					"host": [
+						"{{url_oauth_api}}"
+					],
+					"path": [
+						"me",
+						"karma"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WSB posts",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url_oauth_base}}/r/wallstreetbets/hot?g=US&limit=100&show=all",
+					"host": [
+						"{{url_oauth_base}}"
+					],
+					"path": [
+						"r",
+						"wallstreetbets",
+						"hot"
+					],
+					"query": [
+						{
+							"key": "g",
+							"value": "US"
+						},
+						{
+							"key": "after",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "before",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "show",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"auth": {
 		"type": "oauth2",
 		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "Reddit_WSB_Token_Read",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "identity read",
+				"type": "string"
+			},
 			{
 				"key": "accessTokenUrl",
 				"value": "{{url_accessToken}}",
@@ -63,16 +171,6 @@
 			{
 				"key": "state",
 				"value": "hjgitfutftiyui",
-				"type": "string"
-			},
-			{
-				"key": "tokenName",
-				"value": "Reddit_WSB_Token",
-				"type": "string"
-			},
-			{
-				"key": "scope",
-				"value": "identity",
 				"type": "string"
 			},
 			{
