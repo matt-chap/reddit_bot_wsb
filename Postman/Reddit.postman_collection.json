@@ -17,23 +17,6 @@
 					],
 					"path": [
 						"scopes"
-					],
-					"query": [
-						{
-							"key": "state",
-							"value": "RANDOM_STRING",
-							"disabled": true
-						},
-						{
-							"key": "duration",
-							"value": "DURATION",
-							"disabled": true
-						},
-						{
-							"key": "scope",
-							"value": "SCOPE_STRING",
-							"disabled": true
-						}
 					]
 				}
 			},
@@ -51,23 +34,6 @@
 					],
 					"path": [
 						"me"
-					],
-					"query": [
-						{
-							"key": "state",
-							"value": "RANDOM_STRING",
-							"disabled": true
-						},
-						{
-							"key": "duration",
-							"value": "DURATION",
-							"disabled": true
-						},
-						{
-							"key": "scope",
-							"value": "SCOPE_STRING",
-							"disabled": true
-						}
 					]
 				}
 			},
@@ -92,7 +58,7 @@
 			"response": []
 		},
 		{
-			"name": "WSB posts",
+			"name": "WSB posts HOT",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -105,6 +71,54 @@
 						"r",
 						"wallstreetbets",
 						"hot"
+					],
+					"query": [
+						{
+							"key": "g",
+							"value": "US"
+						},
+						{
+							"key": "after",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "before",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "count",
+							"value": "0",
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "100"
+						},
+						{
+							"key": "show",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "WSB posts NEW",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url_oauth_base}}/r/wallstreetbets/new?g=US&limit=100&show=all",
+					"host": [
+						"{{url_oauth_base}}"
+					],
+					"path": [
+						"r",
+						"wallstreetbets",
+						"new"
 					],
 					"query": [
 						{
