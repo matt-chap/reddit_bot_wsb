@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "018ca438-5f6e-47bc-9492-2aa55489816c",
+		"name": "TD Ameritrade",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://auth.tdameritrade.com/auth?response_type=code&redirect_uri=https%3A%2F%2F127.0.0.1%3A8080&client_id={{td_consumer_key}}%40AMER.OAUTHAP",
+					"protocol": "https",
+					"host": [
+						"auth",
+						"tdameritrade",
+						"com"
+					],
+					"path": [
+						"auth"
+					],
+					"query": [
+						{
+							"key": "response_type",
+							"value": "code"
+						},
+						{
+							"key": "redirect_uri",
+							"value": "https%3A%2F%2F127.0.0.1%3A8080"
+						},
+						{
+							"key": "client_id",
+							"value": "{{td_consumer_key}}%40AMER.OAUTHAP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quotes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_marketdata}}/quotes",
+					"host": [
+						"{{url_marketdata}}"
+					],
+					"path": [
+						"quotes"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{td_consumer_key}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "https://api.tdameritrade.com/v1/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "authorization_code",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "state",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://auth.tdameritrade.com/auth",
+				"type": "string"
+			},
+			{
+				"key": "redirect_uri",
+				"value": "{{url_redirect}}",
+				"type": "string"
+			},
+			{
+				"key": "tokenName",
+				"value": "TD_Token_Test",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
