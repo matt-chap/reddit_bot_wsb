@@ -75,6 +75,21 @@
 		"type": "oauth2",
 		"oauth2": [
 			{
+				"key": "accessTokenUrl",
+				"value": "https://api.tdameritrade.com/v1/oauth2/token",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://auth.tdameritrade.com/auth",
+				"type": "string"
+			},
+			{
+				"key": "useBrowser",
+				"value": false,
+				"type": "boolean"
+			},
+			{
 				"key": "client_authentication",
 				"value": "header",
 				"type": "string"
@@ -82,11 +97,6 @@
 			{
 				"key": "clientId",
 				"value": "{{td_consumer_key}}",
-				"type": "string"
-			},
-			{
-				"key": "accessTokenUrl",
-				"value": "https://api.tdameritrade.com/v1/oauth2/token",
 				"type": "string"
 			},
 			{
@@ -110,11 +120,6 @@
 				"type": "string"
 			},
 			{
-				"key": "authUrl",
-				"value": "https://auth.tdameritrade.com/auth",
-				"type": "string"
-			},
-			{
 				"key": "redirect_uri",
 				"value": "{{url_redirect}}",
 				"type": "string"
@@ -123,11 +128,6 @@
 				"key": "tokenName",
 				"value": "TD_Token_Test",
 				"type": "string"
-			},
-			{
-				"key": "useBrowser",
-				"value": false,
-				"type": "boolean"
 			},
 			{
 				"key": "addTokenTo",
